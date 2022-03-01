@@ -1,10 +1,12 @@
 /* 
 Output: 
-['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
+['Hello Suzi Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
 */
 
 export function greetUsers(customers) {
-    return true;
+    return customers.map(customer => 
+        `Hello ${customer.first_name} ${customer.last_name}`
+    );
 }
 
 /* 
