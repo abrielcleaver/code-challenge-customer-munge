@@ -28,8 +28,16 @@ Output:
 4532
 */
 
+/* 
+Actual Output: 
+2125
+*/
 export function addAllAges(customers) {
-    return true;
+    const sumAges = customers.reduce(
+        (acc, cc) => 
+            acc + cc.age, 
+        0);
+    return sumAges;
 }
 
 /* 

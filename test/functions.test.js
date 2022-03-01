@@ -1,6 +1,11 @@
 // IMPORT MODULES under test here:
 import { greetUsers,
     greetUsersOverAge60,
+    addAllAges,
+    getAverageCoolFactor,
+    getGenderBreakdownOfEachCar,
+    getGenderBreakdownOfFordOwners,
+    getAllCoolFactorsOfEachCar
 } from '../functions.js';
 import customers from './data.js';
 
@@ -85,10 +90,10 @@ test('greetUsersOverAge60', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('addAllAges', (expect) => {
-    const expected = true;
+test('addAllAges', (expect) => {
+    const expected = 2125;
 
-    const actual = greetUsers();
+    const actual = addAllAges(customers);
 
     expect.equal(actual, expected);
 });
@@ -97,7 +102,7 @@ skip('addAllAges', (expect) => {
 skip('getAverageCoolFactor', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = getAverageCoolFactor();
 
     expect.equal(actual, expected);
 });
@@ -113,7 +118,7 @@ skip('getTotalOfEachGender', (expect) => {
 skip('getGenderBreakdownOfFordOwners', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = getGenderBreakdownOfFordOwners();
 
     expect.equal(actual, expected);
 });
@@ -121,7 +126,7 @@ skip('getGenderBreakdownOfFordOwners', (expect) => {
 skip('getGenderBreakdownOfEachCar', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = getGenderBreakdownOfEachCar();
 
     expect.equal(actual, expected);
 });
@@ -129,7 +134,7 @@ skip('getGenderBreakdownOfEachCar', (expect) => {
 skip('getAllCoolFactorsOfEachCar', (expect) => {
     const expected = true;
 
-    const actual = greetUsers();
+    const actual = getAllCoolFactorsOfEachCar();
 
     expect.equal(actual, expected);
 });
