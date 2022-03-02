@@ -11,7 +11,7 @@ export function greetUsers(customers) {
 
 /* 
 Output: 
-['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', etc]
+['Hello Suzi Summerson!', 'Hello Cacilia Caramuscia', etc]
 */
 
 export function greetUsersOverAge60(customers) {
@@ -84,7 +84,19 @@ Output:
 */
 
 export function getGenderBreakdownOfFordOwners(customers) {
-    return true;
+    const breakdownFordOwners = customers.filter(customer => customer.car_make === 'Ford');
+   
+    const hashMap = breakdownFordOwners.reduce((acc, customer) => {
+      
+        if(acc[customer.gender]) {
+            acc[customer.gender]++;
+        } else {
+            acc[customer.gender] = 1;
+        }
+        return acc;
+    }, {});
+
+    return hashMap;
 }
 
 //////////////////////////////////////////////////////////
