@@ -1,15 +1,17 @@
 /* 
 Output: 
-['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
+['Hello Suzi Summerson!', 'Hello Cacilia Caramuscia', 'Hello Mattie Mungane' etc]
 */
 
 export function greetUsers(customers) {
-    return true;
+    return customers.map(customer => 
+        `Hello ${customer.first_name} ${customer.last_name}`
+    );
 }
 
 /* 
 Output: 
-['Hello Suzie Summerson!', 'Hello Cacilia Caramuscia', etc]
+['Hello Suzi Summerson!', 'Hello Cacilia Caramuscia', etc]
 */
 
 export function greetUsersOverAge60(customers) {
@@ -26,8 +28,16 @@ Output:
 4532
 */
 
+/* 
+Actual Output: 
+2125
+*/
 export function addAllAges(customers) {
-    return true;
+    const sumAges = customers.reduce(
+        (acc, cc) => 
+            acc + cc.age, 
+        0);
+    return sumAges;
 }
 
 /* 
@@ -36,7 +46,9 @@ Output:
 */
 
 export function getAverageCoolFactor(customers) {
-    return true;
+    const averageCoolFactor = customers.reduce((acc, item) => acc + item.cool_factor / customers.length, 0);
+ 
+    return averageCoolFactor;
 }
 
 /* 
@@ -50,7 +62,15 @@ Output:
 */
 
 export function getTotalOfEachGender(customers) {
-    return true;
+    const hashMap = customers.reduce((acc, customer) => {
+        if(acc[customer.gender]) {
+            acc[customer.gender]++;
+        } else {
+            acc[customer.gender] = 1;
+        }
+        return acc;
+    }, {});
+    return hashMap;
 }
 
 /* 
@@ -64,7 +84,19 @@ Output:
 */
 
 export function getGenderBreakdownOfFordOwners(customers) {
-    return true;
+    const breakdownFordOwners = customers.filter(customer => customer.car_make === 'Ford');
+   
+    const hashMap = breakdownFordOwners.reduce((acc, customer) => {
+      
+        if(acc[customer.gender]) {
+            acc[customer.gender]++;
+        } else {
+            acc[customer.gender] = 1;
+        }
+        return acc;
+    }, {});
+
+    return hashMap;
 }
 
 //////////////////////////////////////////////////////////
